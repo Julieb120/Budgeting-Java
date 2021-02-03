@@ -12,7 +12,7 @@ import java.util.Objects;
  *
  * @author julie
  */
-public class Budgets {
+public class Budget {
     BigDecimal budget;
     String category;
     BigDecimal spent;
@@ -71,7 +71,7 @@ public class Budgets {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Budgets other = (Budgets) obj;
+        final Budget other = (Budget) obj;
         if (!Objects.equals(this.category, other.category)) {
             return false;
         }
