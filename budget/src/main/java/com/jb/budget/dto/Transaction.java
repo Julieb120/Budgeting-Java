@@ -18,6 +18,15 @@ public class Transaction {
     String location;
     String category;
     LocalDate dateOccured = LocalDate.now();
+    int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public BigDecimal getAmount() {
         return amount;
@@ -58,6 +67,7 @@ public class Transaction {
         hash = 23 * hash + Objects.hashCode(this.location);
         hash = 23 * hash + Objects.hashCode(this.category);
         hash = 23 * hash + Objects.hashCode(this.dateOccured);
+        hash = 23 * hash + Objects.hashCode(this.id);
         return hash;
     }
 
@@ -83,6 +93,9 @@ public class Transaction {
             return false;
         }
         if (!Objects.equals(this.dateOccured, other.dateOccured)) {
+            return false;
+        }
+        if (!Objects.equals(this.id, other.id)) {
             return false;
         }
         return true;

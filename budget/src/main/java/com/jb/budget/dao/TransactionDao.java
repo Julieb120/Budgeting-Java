@@ -14,8 +14,9 @@ import java.util.List;
  */
 public interface TransactionDao {
     List<Transaction> getTransactionsByMonth();
-    List<Transaction> getTransactionsByCategory();
-    Transaction addTransaction();
-    void editTransaction();
-    void deleteTransaction();
+    List<Transaction> getAllTransactions();
+    List<Transaction> getTransactionsByCategory(String category);
+    Transaction addTransaction(Transaction transaction);
+    void editTransaction(Transaction transaction);
+    void deleteTransaction(Transaction transaction);
 }
