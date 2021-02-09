@@ -15,9 +15,18 @@ import java.util.Objects;
  */
 public class Income {
     LocalDate dateOccured = LocalDate.now();
-    BigDecimal incomeSource;
+    BigDecimal amount;
     String location;
+    int id;
 
+    public int getId(){
+        return id;
+    }
+    
+    public void setId(int id){
+        this.id = id;
+    }
+    
     public LocalDate getDateOccured() {
         return dateOccured;
     }
@@ -26,12 +35,12 @@ public class Income {
         this.dateOccured = dateOccured;
     }
 
-    public BigDecimal getIncomeSource() {
-        return incomeSource;
+    public BigDecimal getAmount() {
+        return amount;
     }
 
-    public void setIncomeSource(BigDecimal incomeSource) {
-        this.incomeSource = incomeSource;
+    public void setAmount(BigDecimal amount) {
+        this.amount = amount;
     }
 
     public String getLocation() {
@@ -46,8 +55,9 @@ public class Income {
     public int hashCode() {
         int hash = 7;
         hash = 47 * hash + Objects.hashCode(this.dateOccured);
-        hash = 47 * hash + Objects.hashCode(this.incomeSource);
+        hash = 47 * hash + Objects.hashCode(this.amount);
         hash = 47 * hash + Objects.hashCode(this.location);
+        hash = 47 * hash + Objects.hashCode(this.id);
         return hash;
     }
 
@@ -69,7 +79,10 @@ public class Income {
         if (!Objects.equals(this.dateOccured, other.dateOccured)) {
             return false;
         }
-        if (!Objects.equals(this.incomeSource, other.incomeSource)) {
+        if (!Objects.equals(this.amount, other.amount)) {
+            return false;
+        }
+        if (!Objects.equals(this.id, other.id)) {
             return false;
         }
         return true;
