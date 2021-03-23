@@ -17,6 +17,12 @@ public class Budget {
     String category;
     BigDecimal spent;
     BigDecimal variation;
+    
+    public Budget(){
+        this.spent = new BigDecimal("0");
+        this.variation = new BigDecimal("0");
+    
+    }
 
     public BigDecimal getBudget() {
         return budget;
