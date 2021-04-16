@@ -51,7 +51,7 @@ public class BudgetController {
         
         budgetsDao.addBudget(budget);
         
-        return "budgets";
+        return "redirect:/budgets";
     }
     
     
